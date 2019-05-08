@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><form>
+<textarea   id="demo" type="text" cols="40" rows="10" onkeypress="keydown()"></textarea>
+</form>
+    <script>
+    var x=["Y","o","u"," ","A","r","e"," ","S","t","u","p","i","d","!","!","!"];
+    var y="";
+    function keydown() {
+        for(i=0;i<document.getElementById("demo").value.length;i++) {
+            y=y+x[i];
+            if(i===x.length){
+                document.getElementById("demo").value="";
+                y="";
+            }
+        }
+        document.getElementById("demo").value=y;
+        y="";
+
+        setTimeout("keydown()",1);
+    }
+</script>
+
+</body>
+</html>
